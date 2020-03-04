@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">StoneSissorBag</string>
+    <string name="log_in">Logga in</string>
+    <string name="create_account">Skapa konto</string>
+    <string name="save_account">Spara konto</string>
+    <string name="log_out">Logga ut</string>
+    <string name="new_game">+</string>
+    <string name="invite_friend">Bjud in vän</string>
+    <string name="play_against_computer">Spela mot datorn</string>
+    <string name="add_friend">Lägg till vän</string>
+</resources>
