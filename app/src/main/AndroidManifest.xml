@@ -9,12 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".game"></activity>
+        <activity android:name=".Game" />
         <activity android:name=".WinnerWindow" />
-        <activity
-            android:name=".NewGame"
-            android:parentActivityName=".Games" />
-        <activity android:name=".Games" />
+        <activity android:name=".NewGame" />
         <activity
             android:name=".CreateAccount"
             android:parentActivityName=".MainActivity" />
