@@ -8,4 +8,7 @@
     <string name="invite_friend">Bjud in vän</string>
     <string name="play_against_computer">Spela mot datorn</string>
     <string name="add_friend">Lägg till vän</string>
+    <string name="labelWinnerStatistics">Statistik</string>
+    <string name="textplayagainwinnerwindow">Returmatch</string>
+    <string name="textactivegameswinnerwindow">Aktiva matcher</string>
 </resources>
