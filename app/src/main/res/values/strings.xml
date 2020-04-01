@@ -11,4 +11,6 @@
     <string name="labelWinnerStatistics">Statistik</string>
     <string name="textplayagainwinnerwindow">Returmatch</string>
     <string name="textactivegameswinnerwindow">Aktiva matcher</string>
+    <string name="labelGamePlayer1">Spelare 1</string>
+    <string name="labelGamePlayer2">Spelare 2</string>
 </resources>
