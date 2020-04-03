@@ -2,13 +2,13 @@ package com.example.stonesissorbag;
 
 
 public class Game {
-
-    private String player1;
-    private String cpuPlayer;
+    private Player player1;
+    private Player player2;
     private int scorePlayer1;
-    private int scoreCpuPlayer;
-    private int currentChoicePlayer1;
-    private int currentChoiceCpuPlayer;
+    private int scorePlayer2;
+    private int[] movesPlayer1;
+    private int[] movesPlayer2;
+
     public static final int ROCK = 1;
     public static final int SCISSORS = 2;
     public static final int PAPER = 3;
@@ -17,21 +17,22 @@ public class Game {
     public static final int PLAYER2_WINS = 2;
     public static final int INVALID_INPUT = -1;
 
-    public Game(String player1, String cpuPlayer) {
+    public Game(Player player1, Player player2) {
         this.player1 = player1;
-        this.cpuPlayer = cpuPlayer;
+        this.player2 = player2;
         this.scorePlayer1 = 0;
-        this.scoreCpuPlayer = 0;
-        currentChoicePlayer1 = 0;
-        currentChoiceCpuPlayer = 0;
+        this.scorePlayer2 = 0;
+        movesPlayer1 = new int[5];
+        movesPlayer2 = new int[5];
+
     }
 
-    public String getPlayer1() {
+    public Player getPlayer1() {
         return player1;
     }
 
-    public String getCpuPlayer() {
-        return cpuPlayer;
+    public Player getPlayer2() {
+        return player2;
     }
 
     public int getScorePlayer1() {
@@ -39,15 +40,35 @@ public class Game {
     }
 
     public int getScorePlayer2() {
-        return scoreCpuPlayer;
+        return scorePlayer2;
     }
 
     public void increaseScorePlayer1() {
         scorePlayer1++;
     }
 
-    public void increaseScoreCpuPlayer() {
-        scoreCpuPlayer++;
+    public void increaseScorePlayer2() {
+        scorePlayer2++;
+    }
+
+    public void addChoice(int player, int choice, int round) {
+
+        if(round >= movesPlayer1.length) {
+            int[] temp = new int[movesPlayer1.length * 2];
+            System.arraycopy(movesPlayer1, 0, temp, 0, movesPlayer1.length);
+            movesPlayer1 = temp;
+        }
+        if(round >= movesPlayer2.length) {
+            int[] temp = new int[movesPlayer2.length * 2];
+            System.arraycopy(movesPlayer2, 0, temp, 0, movesPlayer2.length);
+            movesPlayer2 = temp;
+        }
+        if (player == 1) {
+            movesPlayer1[round] = choice;
+        } else if (player == 2) {
+            movesPlayer2[round] = choice;
+        }
+
     }
 
     public int compareChoices(int choice1, int choice2) {
