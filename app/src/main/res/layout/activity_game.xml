@@ -4,34 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Game">
+    tools:context=".GameActivity">
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="91dp"
-        android:layout_height="26dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:text="TextView"
         android:gravity="center"
+        android:text="TextView"
         android:textSize="12dp"
         app:layout_constraintEnd_toStartOf="@+id/textView14"
-        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/labelGamePlayer1" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="91dp"
-        android:layout_height="26dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="108dp"
-        android:text="TextView"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
+        android:text="TextView"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/labelGamePlayer2" />
 
@@ -39,38 +40,32 @@
         android:id="@+id/buttonRockGameWindow"
         android:layout_width="94dp"
         android:layout_height="84dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="168dp"
         android:background="@drawable/rock"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonRockGameWindow2"
-        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonRockGameWindow2"
         android:layout_width="94dp"
         android:layout_height="84dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="168dp"
         android:background="@drawable/paper"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonRockGameWindow3"
-        app:layout_constraintHorizontal_bias="0.969"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonRockGameWindow"
+        tools:layout_editor_absoluteY="612dp" />
 
     <Button
         android:id="@+id/buttonRockGameWindow3"
         android:layout_width="94dp"
         android:layout_height="84dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:layout_marginBottom="168dp"
         android:background="@drawable/scissors"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonRockGameWindow2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

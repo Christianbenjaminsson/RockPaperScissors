@@ -1,11 +1,7 @@
 package com.example.stonesissorbag;
 
-import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
-public class Game extends AppCompatActivity {
+public class Game {
 
     private String player1;
     private String cpuPlayer;
@@ -16,6 +12,10 @@ public class Game extends AppCompatActivity {
     public static final int ROCK = 1;
     public static final int SCISSORS = 2;
     public static final int PAPER = 3;
+    public static final int DRAW = 0;
+    public static final int PLAYER1_WINS = 1;
+    public static final int PLAYER2_WINS = 2;
+    public static final int INVALID_INPUT = -1;
 
     public Game(String player1, String cpuPlayer) {
         this.player1 = player1;
@@ -50,11 +50,25 @@ public class Game extends AppCompatActivity {
         scoreCpuPlayer++;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
-    }
+    public int compareChoices(int choice1, int choice2) {
 
-    
+        int result;
+
+        if (choice1 == choice2) {
+            result = DRAW;
+        } else  switch(choice1) {
+            case ROCK:
+                result = choice2 == SCISSORS ?  PLAYER1_WINS :  PLAYER2_WINS;
+                break;
+            case SCISSORS:
+                result = choice2 == PAPER ?  PLAYER1_WINS :  PLAYER2_WINS;
+                break;
+            case PAPER:
+                result = choice2 == ROCK ?  PLAYER1_WINS :  PLAYER2_WINS;
+                break;
+            default:
+                result = INVALID_INPUT;
+        }
+        return result;
+    }
 }
