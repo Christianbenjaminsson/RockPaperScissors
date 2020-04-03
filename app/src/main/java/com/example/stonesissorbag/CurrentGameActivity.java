@@ -19,8 +19,7 @@ public class CurrentGameActivity extends AppCompatActivity {
     private TextView lastView1 = null;
     private TextView lastView2 = null;
     private TextView resultTextView = null;
-    private TextView player1TextView = null;
-    private TextView player2TextView = null;
+
     private Game game = null;
     private int round = 1;
 
@@ -29,16 +28,21 @@ public class CurrentGameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_game);
+        Intent intent = getIntent();
 
-        Player player1 = new Player("Player 1", 1);
+        String username = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+        Player player1 = new Player(username, 1);
         Player cpuPlayer = new Player("CPU", 2);
         game = new Game(player1, cpuPlayer);
 
         resultTextView = findViewById(R.id.resultTextView);
-        player1TextView = findViewById(R.id.textViewPlayer1);
-        player2TextView = findViewById(R.id.textViewPlayer2);
+
+        TextView player1TextView = findViewById(R.id.textViewPlayer1);
+        TextView player2TextView = findViewById(R.id.textViewPlayer2);
         player1TextView.setText(player1.getUserName());
         player2TextView.setText(cpuPlayer.getUserName());
+
         lastView1 = player1TextView;
         lastView2 = player2TextView;
 
@@ -90,11 +94,11 @@ public class CurrentGameActivity extends AppCompatActivity {
         int roundWinner = game.compareChoices(choice, cpuChoice);
         if (roundWinner == Game.PLAYER1_WINS) {
             game.increaseScorePlayer1();
-            lastView1.setTextColor(Color.rgb(84, 144, 112));
+            lastView1.setTextColor(Color.rgb(54, 108, 76));
             lastView1.setTypeface(null, Typeface.BOLD);
         } else if (roundWinner == Game.PLAYER2_WINS) {
             game.increaseScorePlayer2();
-            lastView2.setTextColor(Color.rgb(84, 144, 112));
+            lastView2.setTextColor(Color.rgb(54, 108, 76));
             lastView2.setTypeface(null, Typeface.BOLD);
         }
 
