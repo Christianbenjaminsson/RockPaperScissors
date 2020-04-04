@@ -5,16 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.TextView;
 
 import pl.droidsonroids.gif.GifImageView;
 
+//Karin har skrivit den här klassen. Christian har gjort det mesta av layouten
 public class WinnerWindow extends AppCompatActivity {
 
-    private TextView headerWinnerWindow = null;
-    private GifImageView gifImageView = null;
-    private TextView resultTextView = null;
+
     private String username = "";
 
     @Override
@@ -22,14 +20,14 @@ public class WinnerWindow extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner_window);
 
-        headerWinnerWindow = findViewById(R.id.headerWinnerWindow);
-        gifImageView = findViewById(R.id.gifImageView);
-        resultTextView = findViewById(R.id.resultsWinnerWindow);
+        TextView headerWinnerWindow = findViewById(R.id.headerWinnerWindow);
+        GifImageView gifImageView = findViewById(R.id.gifImageView);
+        TextView resultTextView = findViewById(R.id.resultsWinnerWindow);
 
         Intent intent = getIntent();
         boolean isWinner = intent.getBooleanExtra(CurrentGameActivity.WINNER_MESSAGE, false);
         if(!isWinner) {
-            headerWinnerWindow.setText("You lost");
+            headerWinnerWindow.setText(R.string.loser_message);
             gifImageView.setImageResource(R.drawable.losergif);
         }
 

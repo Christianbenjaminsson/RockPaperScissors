@@ -12,17 +12,17 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String USERNAME_MESSAGE = "com.example.stonesissorbag.USERNAME";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-
-    public void goToCreateAccount(View view) {
-        Intent intent = new Intent(this, CreateAccount.class);
-        startActivity(intent);
-    }
+    /**
+     *
+     * @author Karin
+     */
     public void goToGame(View view) {
 
         EditText usernameInput = findViewById(R.id.usernameTextView);
@@ -31,6 +31,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CurrentGameActivity.class);
         intent.putExtra(USERNAME_MESSAGE, username);
         startActivity(intent);
-
     }
 }

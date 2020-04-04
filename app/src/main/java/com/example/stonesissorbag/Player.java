@@ -1,5 +1,6 @@
 package com.example.stonesissorbag;
 
+// Den här klassen kommer behövas om man bygger ut spelet
 public class Player {
 
     private String userName;

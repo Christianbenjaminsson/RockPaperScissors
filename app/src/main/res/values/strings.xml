@@ -19,4 +19,5 @@
     <string name="winner_header">Congratulations!</string>
     <string name="quit">Quit</string>
     <string name="change_player">Change player</string>
+    <string name="loser_message">You lost</string>
 </resources>

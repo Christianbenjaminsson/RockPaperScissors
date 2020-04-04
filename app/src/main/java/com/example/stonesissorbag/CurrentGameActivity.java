@@ -9,16 +9,15 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Random;
 
+// Karin har skrivit den här klassen. Christian har gjort delar av layouten
 public class CurrentGameActivity extends AppCompatActivity {
 
     public static final String RESULT_MESSAGE = "com.example.stonesissorbag.RESULTS";
     public static final String WINNER_MESSAGE = "com.example.stonesissorbag.WINNER";
-
 
     private TextView lastView1 = null;
     private TextView lastView2 = null;
@@ -27,11 +26,11 @@ public class CurrentGameActivity extends AppCompatActivity {
     private Game game = null;
     private int round = 1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_game);
+
         Intent intent = getIntent();
 
         String username = intent.getStringExtra(MainActivity.USERNAME_MESSAGE);

@@ -1,5 +1,6 @@
 package com.example.stonesissorbag;
 
+//Christian skapade upp klassen
 
 public class Game {
     private Player player1;
@@ -51,6 +52,7 @@ public class Game {
         scorePlayer2++;
     }
 
+    // Karin har skrivit den här metoden
     public void addChoice(int player, int choice, int round) {
 
         if(round >= movesPlayer1.length) {
@@ -71,13 +73,16 @@ public class Game {
 
     }
 
+    //Karin har skrivit den här metoden
     public int compareChoices(int choice1, int choice2) {
 
         int result;
 
-        if (choice1 == choice2) {
+        if ((choice2 != ROCK) && (choice2 != PAPER) && (choice2 !=SCISSORS)) {
+            result = INVALID_INPUT;
+        } else if (choice1 == choice2) {
             result = DRAW;
-        } else  switch(choice1) {
+        } else switch (choice1) {
             case ROCK:
                 result = choice2 == SCISSORS ?  PLAYER1_WINS :  PLAYER2_WINS;
                 break;
