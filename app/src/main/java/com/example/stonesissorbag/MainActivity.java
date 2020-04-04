@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "com.example.stonesissorbag.MESSAGE";
+    public static final String USERNAME_MESSAGE = "com.example.stonesissorbag.USERNAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         String username = usernameInput.getText().toString();
 
         Intent intent = new Intent(this, CurrentGameActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, username);
+        intent.putExtra(USERNAME_MESSAGE, username);
         startActivity(intent);
 
     }

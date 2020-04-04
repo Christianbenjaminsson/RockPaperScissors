@@ -18,4 +18,5 @@
     <string name="startGame">Start game</string>
     <string name="winner_header">Congratulations!</string>
     <string name="quit">Quit</string>
+    <string name="change_player">Change player</string>
 </resources>

@@ -34,7 +34,7 @@ public class CurrentGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_current_game);
         Intent intent = getIntent();
 
-        String username = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String username = intent.getStringExtra(MainActivity.USERNAME_MESSAGE);
 
         Player player1 = new Player(username, 1);
         Player cpuPlayer = new Player("CPU", 2);
@@ -165,6 +165,7 @@ public class CurrentGameActivity extends AppCompatActivity {
         Intent intent = new Intent(this, WinnerWindow.class);
         intent.putExtra(RESULT_MESSAGE, resultTextView.getText().toString());
         intent.putExtra(WINNER_MESSAGE, isWinner);
+        intent.putExtra(MainActivity.USERNAME_MESSAGE, game.getPlayer1().getUserName());
         startActivity(intent);
     }
 
