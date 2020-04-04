@@ -9,11 +9,13 @@
     <string name="play_against_computer">Spela mot datorn</string>
     <string name="add_friend">Lägg till vän</string>
     <string name="labelWinnerStatistics">Statistik</string>
-    <string name="textplayagainwinnerwindow">Returmatch</string>
+    <string name="textplayagainwinnerwindow">Play again</string>
     <string name="textactivegameswinnerwindow">Aktiva matcher</string>
     <string name="labelGamePlayer1">Player1</string>
     <string name="labelGamePlayer2">Player 2</string>
     <string name="resultText">x - x</string>
     <string name="usernameInput">Enter name</string>
     <string name="startGame">Start game</string>
+    <string name="winner_header">Congratulations!</string>
+    <string name="quit">Quit</string>
 </resources>

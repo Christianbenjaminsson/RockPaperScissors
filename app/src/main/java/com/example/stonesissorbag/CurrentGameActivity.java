@@ -16,6 +16,10 @@ import java.util.Random;
 
 public class CurrentGameActivity extends AppCompatActivity {
 
+    public static final String RESULT_MESSAGE = "com.example.stonesissorbag.RESULTS";
+    public static final String WINNER_MESSAGE = "com.example.stonesissorbag.WINNER";
+
+
     private TextView lastView1 = null;
     private TextView lastView2 = null;
     private TextView resultTextView = null;
@@ -104,13 +108,14 @@ public class CurrentGameActivity extends AppCompatActivity {
 
         round++;
 
-        if(game.getScorePlayer1() > 2 || game.getScorePlayer2() > 2) {
-            goToWinner();
-        }
-
         String resultText = game.getScorePlayer1() + " - " + game.getScorePlayer2();
         resultTextView.setText(resultText);
 
+        if(game.getScorePlayer1() > 2 ) {
+            goToWinner(true);
+        } else if(game.getScorePlayer2() > 2) {
+            goToWinner(false);
+        }
 
         cl.invalidate();
     }
@@ -156,8 +161,10 @@ public class CurrentGameActivity extends AppCompatActivity {
         return cpuChoice;
     }
 
-    private void goToWinner() {
+    private void goToWinner(boolean isWinner) {
         Intent intent = new Intent(this, WinnerWindow.class);
+        intent.putExtra(RESULT_MESSAGE, resultTextView.getText().toString());
+        intent.putExtra(WINNER_MESSAGE, isWinner);
         startActivity(intent);
     }
 
